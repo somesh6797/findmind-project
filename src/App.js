@@ -27,6 +27,8 @@ export class App extends Component {
 
   login=(e)=>{
     let data=JSON.parse(localStorage.getItem("state"));
+    if(data)
+    {
     let a;
     for (a of data){
       
@@ -43,6 +45,7 @@ export class App extends Component {
       this.setState({email:"",password:""})
 
       }
+    }
     }
   }
 
