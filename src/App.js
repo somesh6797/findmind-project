@@ -40,6 +40,8 @@ export class App extends Component {
         this.setState({
         isLoggedIn:false
       })
+      this.setState({email:"",password:""})
+
       }
     }
   }

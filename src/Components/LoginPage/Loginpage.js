@@ -16,29 +16,6 @@ export class Loginpage extends Component {
     }
   }
 
-  handleChange=(property,value)=>{
-    this.setState({[property]:value})
-  }
-
-  login=(e)=>{
-    let data=JSON.parse(localStorage.getItem("state"));
-    let a;
-    for (a of data){
-      
-      if(a.email===this.state.email && a.password===this.state.password)
-      {
-        this.setState({
-          isLoggedIn:true
-        })
-      }
-      else{
-        this.setState({
-        isLoggedIn:false
-      })
-      }
-    }
-  }
-
     render() {
         return (
           <div className={style.loginpage_div}>
@@ -47,15 +24,11 @@ export class Loginpage extends Component {
           <Input 
           Property="email"  
           label="Email Address" 
-          handleChange={this.handleChange} 
-          value={this.state.email} 
           placeholder={"Enter Username"}/>
           <br/>
           <Password 
           Property="password" 
           label="Password" 
-          handleChange={this.handleChange} 
-          value={this.state.password} 
           placeholder={"Enter Password"}/>
           <br/>
           <div className={style.Inline}>
