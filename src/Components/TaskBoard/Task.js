@@ -19,7 +19,6 @@ export class Task extends Component {
 
     check=(e)=>{
         if(e.target.checked){
-            // console.log(e);
             e.target.className=style.checked
             e.target.parentElement.className=style.checkedlabel
         }

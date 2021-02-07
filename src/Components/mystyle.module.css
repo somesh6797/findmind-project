@@ -115,26 +115,6 @@
     font-size: xx-large; 
 }
 
-/* .completed_checkbox::after{
-    visibility: hidden;
-    content: "-o";
-    font-size: 30px;
-    line-height: 25px;
-}
-
-.completed_checkbox:checked{
-    background-color: rgb(167, 166, 166);
-}
-
-.completed_checkbox:checked::after{
-    visibility: visible;
-    content: "o-";
-    font-size: 30px;
-    line-height: 25px;
-} */
-
-
-
 .new_task_button{
     font-weight: 900;
     font-size: 25px;
@@ -205,6 +185,7 @@ align-items: center;
 }
 
 .edit_taskbox{
+    color:rgb(16, 84, 179);
     transform: rotate(90deg);
     font-weight: 900;
     font-size: 25px;
@@ -253,11 +234,12 @@ align-items: center;
     background-image: url("./portrait_face.webp");
     background-position: center;
     background-size: contain;
-    height: 50px;
-    width:50px;
+    height: 80px;
+    width:80px;
     border-radius: 50px; 
+    outline: none;
+    border: 0px;
 }
-
 
 .text_logo{
     font-size: xx-large;
@@ -360,5 +342,9 @@ font-size: medium;
         height:40vw;
         width: 40vw;
         background-color: white;
+    }
+    .photo{
+        height: 50px;
+        width:50px;
     }
   }
