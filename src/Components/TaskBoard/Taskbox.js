@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import style from '../mystyle.module.css'
 import Task from'./Task'
-import {DataProvider} from '../ContextComp.js'
 
 export class Taskbox extends Component {
     constructor(props) {
@@ -41,14 +40,23 @@ export class Taskbox extends Component {
     }
 
     deleteTask=(e,key)=>{
-        delete this.state.items[key];
+        let allItems=this.state.items;
+        let item;
+        for (item of allItems){
+            if(item.key===key){
+                item.text=""
+            }
+        }
+        this.setState({items:allItems,currentItem:this.state.currentItem})
+        // console.log(this.state.items)
+
     }
 
 
     
     render() { 
        let AllTasks=Array.from(this.state.items).map((item ,key)=>{
-            return <Task item={item} key={key}  deleteTask={this.deleteTask} editTask={this.editTask}/>
+            return item.text!==""?<Task item={item} key={key}  deleteTask={this.deleteTask} editTask={this.editTask}/>:null
             
         })
         return (

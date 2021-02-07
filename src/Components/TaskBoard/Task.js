@@ -12,22 +12,35 @@ export class Task extends Component {
         super(props)
     
         this.state = {
-             
+             showModal:false
         }
     }
     
 
     check=(e)=>{
         if(e.target.checked){
-            console.log("object");
+            // console.log(e);
             e.target.className=style.checked
+            e.target.parentElement.className=style.checkedlabel
         }
         else
         {
          e.target.className=style.unchecked
+         e.target.parentElement.className=style.task
         }
     }
+
+    showModal=(what)=>{
+        this.setState({showModal:what})
+    }
     render() {
+        let modal;
+        if (this.state.showModal) {
+                modal=<EditTaskPortal showModal={this.showModal} deleteTask={this.props.deleteTask} item={this.props.item} taskKey={this.props.item.key}/>
+        }
+        else{
+            modal=null;
+        }
         return (
         <div  className={style.task}>
             
@@ -43,10 +56,14 @@ export class Task extends Component {
                 {this.props.item.text}
             </div>
             <div className={style.edittask}>
-                 <FontAwesomeIcon icon={faPenFancy} onClick={this.props.editTask}/> 
+                 <FontAwesomeIcon icon={faPenFancy} onClick={()=>{
+                    //  this.props.editTask();
+                     this.showModal(true);
+                 }}/> 
             </div>
+            {modal}
             
-            {/* <EditTaskPortal deleteTask={this.props.deleteTask} taskKey={this.props.item.key}/> */}
+            
             
         </div>
         )

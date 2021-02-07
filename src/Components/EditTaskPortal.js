@@ -16,11 +16,11 @@ function EditTaskPortal(props) {
                         onClick={(e)=>{props.deleteTask(e,props.taskKey)}}>
                         <FontAwesomeIcon icon={faTrash}/>
                     </div>
-                    <div className={style.close_modal_icon}>
+                    <div className={style.close_modal_icon} onClick={()=>{props.showModal(false)}}>
                         <FontAwesomeIcon icon={faBackspace}/>
                     </div>
                 </div>
-                <div className={style.modal_taskname}>Campus Build</div>
+                <div className={style.modal_taskname}>{props.item.text}</div>
                 <textarea placeholder="Add details" className={style.modal_add_details}></textarea>
                 <div className={style.modal_add_date}>Add date</div>
                 <div className={style.modal_to_another_list}>Move to another list</div>

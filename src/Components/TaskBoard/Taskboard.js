@@ -6,10 +6,22 @@ export class Taskboard extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            taskBoxes:[]
         }
     }
     
+    addTaskBox=()=>{
+        let taskBoxName=prompt("Enter list Name");
+        this.setState({
+            taskBoxes:[...this.state.taskBoxes,taskBoxName]
+        })
+    }
+
+
     render() {
+       let allBox= this.state.taskBoxes.map((taskbox)=>{
+            return <Taskbox taskBoxName={taskbox}/>
+        })
         return (
             <div className={style.taskboard}>
                 <header className={style.header}>    
@@ -19,7 +31,11 @@ export class Taskboard extends Component {
                         <div className={style.photo}></div>
                     </div>
                 </header>
-                <Taskbox taskBoxName={"My Task"}/>
+                {allBox}
+                
+                <div className={style.new_task_box_button} onClick={(e)=>{this.addTaskBox()}}>
+                    +
+                </div>
             </div>
         )
     }
