@@ -28,6 +28,7 @@ export class SignupPage extends Component {
             }
         }
         alert("Login Using email: "+this.state.email+" password: "+this.state.password)
+        this.setState({username:"",email:"",password:""})
     }
     
     setProperty=(property,value)=>{
