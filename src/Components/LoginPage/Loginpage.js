@@ -1,0 +1,57 @@
+import '../../App.css';
+import Input from './Input';
+import Password from './Password';
+import style from '../mystyle.module.css'
+import React, { Component } from 'react'
+import Chkbox from './Chkbox';
+
+export class Loginpage extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       email:"",
+       password:""
+    }
+  }
+
+  handleChange=(property,value)=>{
+    this.setState({[property]:value})
+  }
+
+  login=(e)=>{
+    let data=JSON.parse(localStorage.getItem("state"));
+    let a
+    for (a of data){
+      
+      if(a.email===this.state.email)
+      {
+        console.log("LoggedIN");
+      }
+      else{
+        console.log("Wrong Email/Password");
+      }
+    }
+  }
+
+    render() {
+        return (
+          <React.Fragment>
+          <h1>Log in! </h1>
+          <br/>
+          <Input Property="email"  label="Email Address" handleChange={this.handleChange} value={this.state.email} placeholder={"Enter Username"}/>
+          <br/>
+          <Password Property="password" label="Password" handleChange={this.handleChange} value={this.state.password} placeholder={"Enter Password"}/>
+          <br/>
+          <div className={style.Inline}>
+            <Chkbox value="Remember me"/>
+            <span style={{alignSelf:"flex-end", position:"absolute"}}> <a href="google.com" style={{color:"white",textDecoration:"none"}}>Forgot Password</a> </span>
+          </div>
+          <button className={style.buttonDecor} onClick={(e)=>{this.login(e)}}> Log in </button>
+        </React.Fragment>
+          );
+    }
+}
+
+export default Loginpage
+
