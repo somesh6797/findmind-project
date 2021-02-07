@@ -11,7 +11,8 @@ export class Loginpage extends Component {
   
     this.state = {
        email:"",
-       password:""
+       password:"",
+       isLoggedIn:false
     }
   }
 
@@ -21,34 +22,50 @@ export class Loginpage extends Component {
 
   login=(e)=>{
     let data=JSON.parse(localStorage.getItem("state"));
-    let a
+    let a;
     for (a of data){
       
-      if(a.email===this.state.email)
+      if(a.email===this.state.email && a.password===this.state.password)
       {
-        console.log("LoggedIN");
+        this.setState({
+          isLoggedIn:true
+        })
       }
       else{
-        console.log("Wrong Email/Password");
+        this.setState({
+        isLoggedIn:false
+      })
       }
     }
   }
 
     render() {
         return (
-          <React.Fragment>
+          <div className={style.loginpage_div}>
           <h1>Log in! </h1>
           <br/>
-          <Input Property="email"  label="Email Address" handleChange={this.handleChange} value={this.state.email} placeholder={"Enter Username"}/>
+          <Input 
+          Property="email"  
+          label="Email Address" 
+          handleChange={this.handleChange} 
+          value={this.state.email} 
+          placeholder={"Enter Username"}/>
           <br/>
-          <Password Property="password" label="Password" handleChange={this.handleChange} value={this.state.password} placeholder={"Enter Password"}/>
+          <Password 
+          Property="password" 
+          label="Password" 
+          handleChange={this.handleChange} 
+          value={this.state.password} 
+          placeholder={"Enter Password"}/>
           <br/>
           <div className={style.Inline}>
             <Chkbox value="Remember me"/>
-            <span style={{alignSelf:"flex-end", position:"absolute"}}> <a href="google.com" style={{color:"white",textDecoration:"none"}}>Forgot Password</a> </span>
+            <span style={{alignSelf:"flex-end", position:"absolute"}}> 
+              <a href="google.com" style={{color:"white",textDecoration:"none"}}>Forgot Password</a> 
+            </span>
           </div>
-          <button className={style.buttonDecor} onClick={(e)=>{this.login(e)}}> Log in </button>
-        </React.Fragment>
+          <button className={style.buttonDecor} onClick={(e)=>{this.props.login(e)}}> Log in </button>
+      </div>
           );
     }
 }

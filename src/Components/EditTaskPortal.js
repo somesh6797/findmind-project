@@ -4,8 +4,6 @@ import style from './mystyle.module.css'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBackspace, faTrash} from '@fortawesome/free-solid-svg-icons'
-import { DataConsumer } from './ContextComp'
-
 
 function EditTaskPortal(props) {
     return ReactDOM.createPortal(

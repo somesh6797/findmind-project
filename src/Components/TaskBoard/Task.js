@@ -9,8 +9,7 @@ import EditTaskPortal from '../EditTaskPortal'
 
 export class Task extends Component {
     constructor(props) {
-        super(props)
-    
+        super(props);
         this.state = {
              showModal:false
         }

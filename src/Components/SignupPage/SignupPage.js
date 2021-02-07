@@ -18,15 +18,16 @@ export class SignupPage extends Component {
     signUp=()=>{
         let data;
         data=JSON.parse(localStorage.getItem("state"))
-        if(data){
-
-        localStorage.setItem("state",JSON.stringify([...data,(this.state)]))
-        }else
+        if(this.state.username!=="" && this.state.password!=="" && this.state.email!=="")
         {
-
-        localStorage.setItem("state",JSON.stringify([(this.state)]))
+            if(data){
+                localStorage.setItem("state",JSON.stringify([...data,(this.state)]))
+            }else
+            {
+            localStorage.setItem("state",JSON.stringify([(this.state)]))
+            }
         }
-        console.log((JSON.parse(localStorage.getItem("state"))));
+        alert("Login Using email: "+this.state.email+" password: "+this.state.password)
     }
     
     setProperty=(property,value)=>{
@@ -36,6 +37,7 @@ export class SignupPage extends Component {
     render() {
         return (
             <React.Fragment>
+                <div action="" className={style.loginpage_div}>
                 <h1>Sign Up</h1>
                 <br/>
                 <Input label="Username" Property="username" value={this.state.username} setProperty={this.setProperty} placeholder="Enter Name"/>
@@ -51,6 +53,7 @@ export class SignupPage extends Component {
                 </div>
                 <br/>
                 <button id= "downBtn" className={style.buttonDecor} onClick={this.signUp}>Sign Up</button>
+                </div>
             </React.Fragment>
         )
     }

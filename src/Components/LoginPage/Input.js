@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { DataConsumer } from '../ContextComp'
 import style from '../mystyle.module.css'
 
 export class Input extends Component {
@@ -13,15 +14,27 @@ export class Input extends Component {
     render() {
         return (
             <React.Fragment>
-            <form action=""className={style.DefWidth}>
-                <fieldset className={style.fieldsetBorder}>
-                    <legend>
-                        {this.props.label}
-                    </legend>
-                    
-                    <input type="text" value={this.props.value} placeholder={this.props.placeholder} onChange={(e)=>{this.props.handleChange(this.props.Property,e.target.value)}} className={style.hide_input_border}/>
-                </fieldset>
-            </form>
+                <DataConsumer>
+                    {(value)=>{
+                        // console.log(value.statecopy.email)
+                        return(
+                        <form action="" className={style.DefWidth}>
+                        <fieldset className={style.fieldsetBorder}>
+                            <legend>
+                                {this.props.label}
+                            </legend>
+                            <input type="text" 
+                            value={value.statecopy.email} 
+                            placeholder={this.props.placeholder} 
+                            onChange={(e)=>{
+                                value.handleChange(this.props.Property,e.target.value)}} 
+                            className={style.hide_input_border}/>
+                        </fieldset>
+                    </form>
+                    )}}
+                </DataConsumer>
+
+
             </React.Fragment>
         )
     }

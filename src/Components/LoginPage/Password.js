@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { DataConsumer } from '../ContextComp'
 import style from '../mystyle.module.css'
 
 export class Password extends Component {
@@ -13,14 +14,22 @@ export class Password extends Component {
     render() {
         return (
                 <div>
-                <form action="" className={style.DefWidth}>
-                    <fieldset className={style.fieldsetBorder}>
-                        <legend>
-                            {this.props.label}
-                        </legend>
-                        <input type="password" value={this.props.value} placeholder={this.props.placeholder}className={style.hide_input_border} onChange={(e)=>{this.props.handleChange(this.props.Property,e.target.value)}}/>
-                    </fieldset>
-                </form>
+                <DataConsumer>
+                {
+                    (value)=>{
+                        return(
+                            <form action="" className={style.DefWidth}>
+                                <fieldset className={style.fieldsetBorder}>
+                                    <legend>
+                                        {this.props.label}
+                                    </legend>
+                                    <input type="password" value={value.statecopy.password} placeholder={this.props.placeholder}className={style.hide_input_border} onChange={(e)=>{value.handleChange(this.props.Property,e.target.value)}}/>
+                                </fieldset>
+                            </form>
+                        )
+                    }
+                }
+                </DataConsumer>
                 </div>
             )
     }
