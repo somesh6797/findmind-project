@@ -11,7 +11,7 @@ export class Chkbox extends Component {
     
     render() {
         return (
-            <div style={{alignSelf:"flex-start"}}>
+            <div style={{alignSelf:"flex-start",marginTop:"-5px"}}>
                 <input type="checkbox" name="remember"/>
                 <label htmlFor="remember" style={{color:"white"}}>{this.props.value} </label>
             </div>
