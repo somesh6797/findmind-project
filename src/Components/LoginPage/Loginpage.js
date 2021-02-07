@@ -60,7 +60,8 @@ export class Loginpage extends Component {
           <br/>
           <div className={style.Inline}>
             <Chkbox value="Remember me"/>
-            <span style={{alignSelf:"flex-end", position:"absolute"}}> 
+
+            <span style={{alignSelf:"flex-end", position:"absolute",fontSize:"13px"}}> 
               <a href="google.com" style={{color:"white",textDecoration:"none"}}>Forgot Password</a> 
             </span>
           </div>

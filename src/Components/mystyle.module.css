@@ -298,7 +298,7 @@ font-weight: 600;
     width: 50%;
     font-size: small;
     font-weight: 300;
-    background-color: springgreen;
+    /* background-color: springgreen; */
 }
 
 .DefWidth{
