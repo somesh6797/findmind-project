@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/findmind-project/static/css/main.a6a7c66a.chunk.css",
-    "main.js": "/findmind-project/static/js/main.5cc4eb7d.chunk.js",
-    "main.js.map": "/findmind-project/static/js/main.5cc4eb7d.chunk.js.map",
+    "main.css": "/findmind-project/static/css/main.aaa24f50.chunk.css",
+    "main.js": "/findmind-project/static/js/main.0c8d87ee.chunk.js",
+    "main.js.map": "/findmind-project/static/js/main.0c8d87ee.chunk.js.map",
     "runtime-main.js": "/findmind-project/static/js/runtime-main.e80343d3.js",
     "runtime-main.js.map": "/findmind-project/static/js/runtime-main.e80343d3.js.map",
-    "static/js/2.4f36f849.chunk.js": "/findmind-project/static/js/2.4f36f849.chunk.js",
-    "static/js/2.4f36f849.chunk.js.map": "/findmind-project/static/js/2.4f36f849.chunk.js.map",
+    "static/js/2.a288a22f.chunk.js": "/findmind-project/static/js/2.a288a22f.chunk.js",
+    "static/js/2.a288a22f.chunk.js.map": "/findmind-project/static/js/2.a288a22f.chunk.js.map",
     "static/js/3.49589b29.chunk.js": "/findmind-project/static/js/3.49589b29.chunk.js",
     "static/js/3.49589b29.chunk.js.map": "/findmind-project/static/js/3.49589b29.chunk.js.map",
     "index.html": "/findmind-project/index.html",
-    "static/css/main.a6a7c66a.chunk.css.map": "/findmind-project/static/css/main.a6a7c66a.chunk.css.map",
-    "static/js/2.4f36f849.chunk.js.LICENSE.txt": "/findmind-project/static/js/2.4f36f849.chunk.js.LICENSE.txt",
+    "static/css/main.aaa24f50.chunk.css.map": "/findmind-project/static/css/main.aaa24f50.chunk.css.map",
+    "static/js/2.a288a22f.chunk.js.LICENSE.txt": "/findmind-project/static/js/2.a288a22f.chunk.js.LICENSE.txt",
     "static/media/mystyle.module.css": "/findmind-project/static/media/portrait_face.a2a2e2ec.webp"
   },
   "entrypoints": [
     "static/js/runtime-main.e80343d3.js",
-    "static/js/2.4f36f849.chunk.js",
-    "static/css/main.a6a7c66a.chunk.css",
-    "static/js/main.5cc4eb7d.chunk.js"
+    "static/js/2.a288a22f.chunk.js",
+    "static/css/main.aaa24f50.chunk.css",
+    "static/js/main.0c8d87ee.chunk.js"
   ]
 }
